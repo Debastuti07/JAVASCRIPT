@@ -1,0 +1,25 @@
+default javascript => Synchronous
+           => single threaded 
+
+
+execution context=> execute one line of code at a time 
+                | =>console log 1
+                | =>console log 2
+                |
+                |
+            callstack    memory heap
+
+
+Blocking code vs Non Blocking code
+      |                 |
+      |                 |
+      |                 |
+      |                 |
+   Block the flow     Does Not 
+   of the program    Block Execution
+      |                 |
+      |                 |
+      |                 |
+    Read File Sync    Read File Async 
+
+    
