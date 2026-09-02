@@ -1,0 +1,2 @@
+this object refers window object 
+but in node env it refers empty object{}
