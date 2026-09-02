@@ -5,21 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Closure</title>
 </head>
-<body>
-    
+<body style="background-color: #313131;">
+    <button id="orange">orange</button>
+    <button id="green">green</button>
 </body>
 <script>
-    function init() {
-       var name = "Mozilla"; // name is a local variable created by init
-       function displayName() {
-       // displayName() is the inner function, that forms a closure
-       console.log(name); // use variable declared in the parent function
-  }
+//     function init() {
+//        var name = "Mozilla"; // name is a local variable created by init
+//        function displayName() {
+//        // displayName() is the inner function, that forms a closure
+//        console.log(name); // use variable declared in the parent function
+//   }
   
-    displayName();
-}
-    init();
+//     displayName();
+// }
+//     init();
 
+//lexical scoping
+//     function outer(){
+//         let username="megha";
+//         console.log("outer",secret);//error
+        
+//         function inner(){
+//             let secret="my123"
+//             console.log("inner",username);//megha
+            
+//         }
+//         function innerTwo(){
+//             console.log("inner two",username);//megha
+//             console.log("inner two",secret);//error
+            
+//         }
+//         inner();
+//         innerTwo();
+//     }
+//     outer();
+//     console.log("too outer",username);//error
     
+
+
+//     //closure 
+
+
+//     function makeFunc() {
+//         const name = "Mozilla";
+//         function displayName() {
+//         console.log(name);
+//   }
+//         return displayName;
+// }
+
+//     const myFunc = makeFunc();
+//     myFunc();
+
+    // document.querySelector('#orange').addEventListener('click',function(e){
+    //     document.body.style.backgroundColor="orange";
+    // })
+    // document.querySelector('#green').addEventListener('click',function(e){
+    //     document.body.style.backgroundColor="green";
+    // })
+
+
+    function clickHandler(color){
+        // document.body.style.backgroundColor=`${color}`;
+        return function(){
+            document.body.style.backgroundColor=`${color}`;
+        }
+    }
+    
+     document.getElementById('orange').onclick=clickHandler("orange");
+     document.getElementById('green').onclick=clickHandler("green");
 </script>
 </html>
